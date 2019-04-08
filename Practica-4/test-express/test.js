@@ -37,13 +37,14 @@ io.on('connection', function(socket){
     usuarios = usuarios - 1;
     io.emit('new_message', "<p> Servidor: Un miembro ha abandonado :( </p>");
   });
-  io.emit('new_message', "<h2> MENSAJES: </h2>");
+
 
 
   //-- Detectar si se ha recibido un mensaje del cliente
   socket.on('new_message', msg => {
+    mens = msg.split(": ")
 
-    if (msg == '/help'){
+    if (mens[1] == '/help'){
       console.log("El usuario ha seleccionado: /help")
 
       respuesta = "<h4>COMANDOS SOPORTADOS:</h4>" +
@@ -57,7 +58,7 @@ io.on('connection', function(socket){
       //-- Emitir un mensaje a todos los clientes conectados
       io.emit('new_message', respuesta);
 
-    }else if(msg == '/list'){
+    }else if(mens[1] == '/list'){
       console.log("El usuario ha seleccionado /list")
 
       respuesta = "<p>Servidor: Número de usuarios conectados--> " + usuarios +
@@ -66,13 +67,13 @@ io.on('connection', function(socket){
       //-- Emitir un mensaje a todos los clientes conectados
       io.emit('new_message', respuesta);
 
-    }else if(msg == '/hello'){
+    }else if(mens[1] == '/hello'){
       console.log("El usuario ha seleccionado /hello")
 
       respuesta = "<p>Servidor: Hola amigo 	(´◔ ω◔`) ノシ </p>"
       io.emit('new_message', respuesta);
 
-    }else if(msg == '/date'){
+    }else if(mens[1] == '/date'){
       console.log("El usuario ha seleccionado /date")
 
       var d = new Date();

@@ -1,6 +1,6 @@
 function main() {
   console.log("Hola!!!!-------------")
-
+  var person = prompt("Please enter your name", "Harry Potter");
   //-- Crear el websocket
   var socket = io();
 
@@ -19,7 +19,7 @@ function main() {
   send.onclick = () => {
 
     //-- Enviar el mensaje, con el evento "new_message"
-    socket.emit('new_message', msg.value);
+    socket.emit('new_message', person + ": " + msg.value);
     msg.value = "";
 
     //-- Lo notificamos en la consola del navegador
