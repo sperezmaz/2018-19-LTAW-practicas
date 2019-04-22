@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="client.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h1>TIENDA DE TECNOLOGÍA</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="index.html">Portada</a></li>
+      <li><a href="Portatiles.html">Portatiles</a></li>
+      <li><a href="moviles.html">Móviles</a></li>
+      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a style="color:#44F94E" href="bienvenido.html" target="_blank">Ingresar</a></li>
+      <li><a style="color:#000000" href="form.html">Comprar <img alt="icono" src="imagenes/carro.png" width="21" height="21"></a></li>
+    </ul>
+
+    <form action="/url" method="post" autocomplete= "off">
+      <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+      <datalist id="resultado"></datalist>
+      <input type="submit" value="Buscar">
+    </form>
+
+    <div>
+      <h2>HP Pavilion 15-cs0012ns</h2>
+      <img alt="producto" src="imagenes/hp_pavilion.jpg" width="350" height="430" class="derecha">
+      <b class="derecha">1300 euros</b>
+      <p>i7, 16 GB, 1 TB HDD + 256 GB SSD, GeForce MX150 4 GB</p><br/>
+      <p>Con un diseño moderno y sofisticado, el nuevo portátil HP Pavilion
+        15-cs0012ns ofrece el equilibrio perfecto entre rendimiento y estilo.
+        Elegante. Fino. Sorprendente. Diseñado para ofrecerte el máximo espacio
+        de pantalla, este modelo Hp Pavilion de 15" proporciona la mejor
+        visualización en un diseño más pequeño y elegante.</p>
+      <p>Realiza todas tus tareas diarias. Con hasta 10 horas y 15 minutos de
+        duración de la batería y una carga del 90% en 90 minutos, te ofrece
+        energía durante todo el día con carga de sobra. Realiza cualquier tarea
+        con suficiente energía restante para disfrutar de un tiempo libre bien
+        merecido.</p>
+      <video width="400" height="250" controls>
+        <source src="videos/hp_pavilion.mp4" type="video/mp4">
+      </video>
+    </div>
+  </body>
+</html>

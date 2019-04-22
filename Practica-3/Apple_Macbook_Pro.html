@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="client.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h1>TIENDA DE TECNOLOGÍA</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="index.html">Portada</a></li>
+      <li><a href="Portatiles.html">Portatiles</a></li>
+      <li><a href="moviles.html">Móviles</a></li>
+      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a style="color:#44F94E" href="bienvenido.html" target="_blank">Ingresar</a></li>
+      <li><a style="color:#000000" href="form.html">Comprar <img alt="icono" src="imagenes/carro.png" width="21" height="21"></a></li>
+    </ul>
+
+    <form action="/url" method="post" autocomplete= "off">
+      <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+      <datalist id="resultado"></datalist>
+      <input type="submit" value="Buscar">
+    </form>
+
+    <div>
+      <h2>Apple MacBook Pro MPXQ2Y/A</h2>
+      <img alt="producto" src="imagenes/apple_macbook_pro.jpg" width="380" height="400" class="derecha">
+      <b class="derecha">1200 euros</b>
+      <p>13", i5, 8 GB, 128 GB SSD</p><br/>
+      <p>Es más rápido y potente que antes, pero más fino y ligero que nunca.
+        Tiene la pantalla con más color y brillo jamás vista en un portátil Mac.
+        El MacBook Pro es el resultado de nuestras ideas más innovadoras.
+        Y puede hacer realidad las tuyas.</p>
+      <video width="400" height="250" controls>
+        <source src="videos/apple_macbook_pro.mp4" type="video/mp4">
+      </video>
+      <audio src="audios/apple_macbook_pro.mp3" controls autoplay loop></audio>
+      <hr/>
+      <input type="button" onclick="location.href='incluir.html'" value="Añadir al carro" style="height:40px" style="color:#f58e2d">
+      <img alt="icono" src="imagenes/carro.png" width="21" height="21">
+    </div>
+  </body>
+</html>

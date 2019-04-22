@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="client.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h1>TIENDA DE TECNOLOGÍA</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="index.html">Portada</a></li>
+      <li><a href="Portatiles.html">Portatiles</a></li>
+      <li><a href="moviles.html">Móviles</a></li>
+      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a style="color:#44F94E" href="bienvenido.html" target="_blank">Ingresar</a></li>
+      <li><a style="color:#000000" href="form.html">Comprar <img alt="icono" src="imagenes/carro.png" width="21" height="21"></a></li>
+    </ul>
+
+    <form action="/url" method="post" autocomplete= "off">
+      <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+      <datalist id="resultado"></datalist>
+      <input type="submit" value="Buscar">
+    </form>
+
+    <div>
+      <h2>Disco duro portátil Toshiba Canvio Basics</h2>
+        <img alt="producto" src="imagenes/disco_toshiba_2tb.jpg" width="350" height="430" class="derecha">
+        <b class="derecha">85 euros</b>
+        <p>2 TB, USB 3.0 negro</p><br/>
+        <p>Transfiere con rapidez archivos mediante SuperSpeed USB 3.0 y almacena
+           2TB de datos en los discos duros externos Canvio Basics:</p>
+        <p>Estos dispositivos están listos para su uso con Microsoft Windows y no
+          requieren ninguna instalación de software, así que empezar a almacenar
+          todos tus archivos favoritos no podría ser más fácil. Tanto en tu
+          escritorio como en movimiento, su diseño intemporal consigue que siempre
+           tenga un gran aspecto. Además, este disco duro también te permite
+           conectarte a hardware más antiguo gracias a la compatibilidad con
+           USB 2.0.</p>
+    </div>
+  </body>
+</html>

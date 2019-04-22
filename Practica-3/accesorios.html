@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="client.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h1>TIENDA DE TECNOLOGÍA</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="index.html">Portada</a></li>
+      <li><a href="Portatiles.html">Portatiles</a></li>
+      <li><a href="moviles.html">Móviles</a></li>
+      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a style="color:#44F94E" href="bienvenido.html" target="_blank">Ingresar</a></li>
+      <li><a style="color:#000000" href="form.html">Comprar <img alt="icono" src="imagenes/carro.png" width="21" height="21"></a></li>
+    </ul>
+
+    <form action="/url" method="post" autocomplete= "off">
+      <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+      <datalist id="resultado"></datalist>
+      <input type="submit" value="Buscar">
+    </form>
+
+    <div>
+      <h2>ACCESORIOS</h2>
+      <ul class="contenido">
+        <li><a href = "Xiaomi_Amazfit_Smartwatch.html">
+            <div>
+              <img alt="producto" src="imagenes/Xiaomi_Amazfit_Stratos_Smartwatch.jpg" width="200" height="200">
+              <p>Xiaomi Amazfit Stratos Smartwatch</p>
+              <b>170 euros</b>
+            </div>
+        </a></li>
+        <li><a href = "disco_toshiba_2tb.html">
+            <div>
+              <img alt="producto" src="imagenes/disco_toshiba_2tb.jpg" width="170" height="200">
+              <p>Disco Duro Toshiba 2 Tb</p>
+              <b>85 <strike style="color:#FF0000";> 120</strike> euros</b>
+            </div>
+        </a></li>
+        <li><a href = "xiaomi_mi_band.html">
+            <div>
+              <img alt="producto" src="imagenes/xiaomi_mi_band.jpg" width="170" height="200">
+              <p>Xiaomi Mi Band 3</p>
+              <b>24 <strike style="color:#FF0000";> 30</strike> euros</b>
+            </div>
+        </a></li>
+      </ul>
+    </div>
+  </body>
+</html>

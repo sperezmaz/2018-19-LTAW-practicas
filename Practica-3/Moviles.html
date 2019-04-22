@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="client.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h1>TIENDA DE TECNOLOGÍA</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="index.html">Portada</a></li>
+      <li><a href="Portatiles.html">Portatiles</a></li>
+      <li><a href="moviles.html">Móviles</a></li>
+      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a style="color:#44F94E" href="bienvenido.html" target="_blank">Ingresar</a></li>
+      <li><a style="color:#000000" href="form.html">Comprar <img alt="icono" src="imagenes/carro.png" width="21" height="21"></a></li>
+    </ul>
+
+    <form action="/url" method="post" autocomplete= "off">
+      <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+      <datalist id="resultado"></datalist>
+      <input type="submit" value="Buscar">
+    </form>
+    
+    <div>
+      <h2>MÓVILES</h2>
+      <ul class="contenido">
+        <li><a href = "Samsung_Galaxy_Fold.html">
+            <div>
+              <img alt="producto" src="imagenes/galaxy_fold.png" width="170" height="200">
+              <p>Samsung Galaxy Fold</p>
+              <b>2000 euros</b>
+            </div>
+        </a></li>
+        <li><a href = "Samsung_Galaxy_S9Plus.html">
+            <div>
+              <img alt="producto" src="imagenes/samsung_galaxy_9.jpg" width="170" height="200">
+              <p>Samsung Galaxy S9 PLUS</p>
+              <b>600 <strike style="color:#FF0000"; > 950</strike> euros</b>
+            </div>
+        </a></li>
+      </ul>
+    </div>
+  </body>
+</html>

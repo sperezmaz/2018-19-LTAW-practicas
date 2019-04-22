@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Formulario de compra</h2>
+
+  <form action="/myform" method="post">
+    <fieldset>
+      Nombre:<br>
+      <input type="text" name="nombre">
+      <br><br>
+      Apellidos:<br>
+      <input type="text" name="apellidos">
+      <br><br>
+      Correo Electronico:<br>
+      <input type="text" name="correo">
+      <br><br>
+
+      Metodo de pago:<br>
+      <input type="radio" name="pago" value="paypal"> Paypal<br>
+      <input type="radio" name="pago" value="tarjeta"> Tarjeta de credito<br>
+      <input type="radio" name="pago" value="transferencia"> Transferencia bancaria
+      <br><br>
+
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+</body>
+</html>

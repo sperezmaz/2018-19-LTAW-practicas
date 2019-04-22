@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="client.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h1>TIENDA DE TECNOLOGÍA</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="index.html">Portada</a></li>
+      <li><a href="Portatiles.html">Portatiles</a></li>
+      <li><a href="moviles.html">Móviles</a></li>
+      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a style="color:#44F94E" href="bienvenido.html" target="_blank">Ingresar</a></li>
+      <li><a style="color:#000000" href="form.html">Comprar <img alt="icono" src="imagenes/carro.png" width="21" height="21"></a></li>
+    </ul>
+
+    <form action="/url" method="post" autocomplete= "off">
+      <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+      <datalist id="resultado"></datalist>
+      <input type="submit" value="Buscar">
+    </form>
+
+    <div>
+      <h2>Xiaomi Mi Band 3</h2>
+        <img alt="producto" src="imagenes/xiaomi_mi_band.jpg" width="350" height="430" class="derecha">
+        <b class="derecha">24 euros</b>
+        <p>OLED, Pulsómetro, Sensor frecuencia cardíaca, Negro</p><br/>
+        <p>Resistente al agua hasta 50 metros. Da igual si estás corriendo,
+          montando en bici o andando, porque siempre estarás al tanto de tu
+          frecuencia cardiaca y velocidad. Además podrás monitorizar tu estado
+          físico y ajustar la intensidad de tus ejercicios para obtener mejores
+          resultados.</p>
+        <p>Mi Band 3 no dejará que te desmotives porque cada vez que alcances tu
+          objetivo diario de pasos, Mi Band 3 te avisará de que lo has logrado.</p>
+        <p>Monitoriza con más precisión el recuento de tus pasos, tu frecuencia
+          cardíaca y la calidad del sueño, y cuenta con alertas para controlar la
+          inactivdad.</p>
+        <video width="400" height="250" controls>
+          <source src="videos/xiaomi_mi_band.mp4" type="video/mp4">
+        </video>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <script src="client.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header>
+        <h1>TIENDA DE TECNOLOGÍA</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="index.html">Portada</a></li>
+      <li><a href="Portatiles.html">Portatiles</a></li>
+      <li><a href="moviles.html">Móviles</a></li>
+      <li><a href="accesorios.html">Accesorios</a></li>
+      <li><a style="color:#44F94E" href="bienvenido.html" target="_blank">Ingresar</a></li>
+      <li><a style="color:#000000" href="form.html">Comprar <img alt="icono" src="imagenes/carro.png" width="21" height="21"></a></li>
+    </ul>
+
+    <form action="/url" method="post" autocomplete= "off">
+      <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+      <datalist id="resultado"></datalist>
+      <input type="submit" value="Buscar">
+    </form>
+
+    <div>
+      <h2>Xiaomi Amazfit Stratos Smartwatch</h2>
+        <img alt="producto" src="imagenes/Xiaomi_Amazfit_Stratos_Smartwatch.jpg" width="350" height="430" class="derecha">
+        <b class="derecha">170 euros</b>
+        <p>Material del reloj Cerámica Esfera: Acero inoxidable 316L Correa:
+          Silicona. Xiaomi Amazfit Stratos cuenta con cristal con un acabado 2.5D,
+          la caja está fabricada en acero inoxidable 316L con fibra de carbono.</p>
+        <p>Cuenta con una batería 280 mAh Li-Po, con una duración de hasta 5 días
+          o 35 horas con el GPS encendido. Cuenta con sensor cardíaco, así como
+          podómetro y cuenta calorías. </p>
+        <p>Tendrás todos los datos registrados en el
+          reloj monitorizados en tu smartphone en tiempo real, a través de la
+          aplicación Amazfit Watch 2.0 (compatible con Android e iOs).</p>
+        <video width="400" height="250" controls>
+          <source src="videos/Xiaomi_Amazfit_Stratos_Smartwatch.mp4" type="video/mp4">
+        </video>
+    </div>
+  </body>
+</html>
