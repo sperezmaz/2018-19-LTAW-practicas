@@ -31,40 +31,90 @@ http.createServer((req, res) => {
   var cookie = req.headers.cookie;
   console.log("Cookie: " + cookie)
 
+  var compra = q.pathname.includes("Compra");
+
+  if(!cookie){
+      var ingresado = false;
+  }else{
+      if(cookie.includes('carro') == true && cookie.includes('user') == true){
+          var ingresado = true;
+      }else{
+          var ingresado = false;
+      }
+  }
+
   //-- Obtener el fichero. Si es "/" se toma index.html
   //-- Poner el "." delante para que sean un fichero del directorio actual
   var filename = ""
+
   if (q.pathname == "/"){
     filename += "/index.html"
+  }else if (q.pathname.includes("Compra") && ingresado) {
+    producto = q.pathname.split("/Compra-");
+    producto = producto[1].split(".html");
+    producto = producto[0];
+    restoproductos = cookie.split(";");
+    restoproductos = restoproductos[1].split("=");
+    restoproductos = restoproductos[1];
+
+    if (!restoproductos){
+      res.setHeader('Set-Cookie', 'carro=' + producto)
+    }else{
+      res.setHeader('Set-Cookie', 'carro=' + restoproductos + '&' + producto)
+    }
+
+    filename += "/" + producto + ".html"
+
+  }else if (q.pathname.includes("Compra") && (ingresado == false) || (q.pathname == "/myform") && (ingresado == false)) {
+    filename += "/aviso.html"
   }else if (q.pathname == "/myform") {
     if (req.method === 'POST') {
         // Handle post info...
+       productos_carro = cookie.split("carro=")
+       productos_carro = productos_carro[1].split("&")
+       var content = `
+       <!DOCTYPE html>
+       <html lang="es" dir="ltr">
+         <head>
+           <meta charset="utf-8"></meta>
+           <title>Tienda_Tecnológica</title>
+           <link rel="stylesheet" href="css/micss.css">
+         </head>
 
-        var content = `
-        <!DOCTYPE html>
-        <html lang="es">
-          <head>
-            <meta charset="utf-8">
-            <title>FORM 1</title>
-          </head>
-          <body>
-            <p>Recibido: `
+         <body>
+           <div class="header">
+             <header>
+               <h1>TIENDA DE TECNOLOGÍA</h1>
+             </header>
+           </div>
+
+           <ul class="tabla_navegacion">
+              <li><a href="index.html">Portada</a></li>
+           </ul>
+           <h2>CARRITO</h2>
+           <p>PRODUCTOS:</p>
+           <ul style="list-style-type: disc; padding-left: 100px;">`
+       for (i=0;i<productos_carro.length;i++){
+         content += `<li>` + productos_carro[i] + `</li>`
+
+       }
 
         req.on('data', chunk => {
             //-- Leer los datos (convertir el buffer a cadena)
             data = chunk.toString();
-
+            data = data.split("&")
             //-- Añadir los datos a la respuesta
-            content += data;
+            content += `</ul>
+            <br><p>DATOS USUARIO:</p>
+            <ul style="list-style-type: disc; padding-left: 100px;">`
+            for (i=0;i<data.length;i++){
+              content += `<li>` + data[i] + `</li>`
 
-            //-- Fin del mensaje. Enlace al formulario
-            content += `
-                </p>
-                <p>Cookie: ` + cookie + `</p>
-                <a href="/">[Formulario]</a>
+            }
+            content += `</ul>
               </body>
-            </html>
-            `
+            </html>`;
+
             //-- Mostrar los datos en la consola del servidor
             console.log("Datos recibidos: " + data)
             res.statusCode = 200;
@@ -79,10 +129,7 @@ http.createServer((req, res) => {
          return
     }
   }else if (q.pathname == "/bienvenido.html") {
-    res.setHeader('Set-Cookie', 'user=obijuan')
-    filename += "/bienvenido.html"
-  }else if (q.pathname == "/incluir.html") {
-    res.setHeader('Set-Cookie', 'product=pepe')
+    res.setHeader('Set-Cookie', ['user=comprador1', 'carro=']);
     filename += "/bienvenido.html"
   }else if (q.pathname == "/search"){
     var body = [];
@@ -131,7 +178,6 @@ http.createServer((req, res) => {
 
             //-- Mostrar los datos en la consola del servidor
             console.log("Datos recibidos: " + data)
-            console.log("eyy" + link[1] )
             res.statusCode = 200;
          });
 
