@@ -1,0 +1,3 @@
+p1 = Product(name="lenovo", stock=5, price=1300, imagen="lenovo.jpg", video="lenovo.mp4", audio="")
+p2 = Product(name="pavilion", stock=3, price=1200, imagen="pavilion.jpg", video="pavilion.mp4", audio="")
+p3 = Product(name="macbook", stock=6, price=1500, imagen="macbook.jpg", video="macbook.mp4", audio="macbook.mp3")

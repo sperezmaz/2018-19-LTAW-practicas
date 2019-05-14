@@ -1,0 +1,61 @@
+<<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Rellene estos datos</h1>
+
+    {% if form.errors %}
+      <p style="color: red;"> Please correct the error{{ forms.errors | pluralize }} below.</p>
+    {% endif%}
+    {{form.non_field_errors}}
+    <form action="/formulario/" method="post">
+      {% csrf_token %}
+      <div class="field">
+        <label for="{{form.usuario.id_for_label}}">Nombre:</label>
+        {{form.usuario}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.direccion.id_for_label}}">Direccion de entrega:</label>
+        {{form.direccion}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.metodo_pago.id_for_label}}">Metodo de pago:</label>
+        {{form.metodo_pago}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.producto1.id_for_label}}">Producto1 para comprar:</label>
+        {{form.producto1}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.cantidad1.id_for_label}}">Cantidad producto1:</label>
+        {{form.cantidad1}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.producto2.id_for_label}}">Producto2 para comprar:</label>
+        {{form.producto2}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.cantidad2.id_for_label}}">Cantidad producto2:</label>
+        {{form.cantidad2}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.producto3.id_for_label}}">Producto3 para comprar:</label>
+        {{form.producto3}}
+      </div>
+      <br>
+      <div class="field">
+        <label for="{{form.cantidad3.id_for_label}}">Cantidad producto3:</label>
+        {{form.cantidad3}}
+      </div>
+      <br>
+
+      <input type="submit" value="Completar">
+    </form>
+  </body>
+</html>

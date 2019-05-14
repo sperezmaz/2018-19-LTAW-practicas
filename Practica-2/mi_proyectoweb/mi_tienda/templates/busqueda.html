@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div>
+      <h2>PORTATILES</h2>
+      <br>
+      <p>Resultados de la búsqueda a partir de la base de datos: </p>
+      <br>
+      <ul style="list-style-type: disc; padding-left: 100px;">
+      {% for elemento in lista %}
+          <li><a href="/{{elemento}}">{{elemento}}</a></li>
+      {% endfor %}
+      </ul>
+{% endblock %}

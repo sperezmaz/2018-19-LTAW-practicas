@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div>
+      <h2>PORTATILES</h2>
+      {% if producto_concreto %}
+        {% if producto_concreto.name == "pavilion" %}
+          <h2>HP Pavilion 15-cs0012ns</h2>
+          <img alt="imagen" src="{% static producto_concreto.imagen%}" width="350" height="430" class="derecha">
+          <b class="derecha">{{ producto_concreto.price }} euros</b>
+          <p>i7, 16 GB, 1 TB HDD + 256 GB SSD, GeForce MX150 4 GB</p><br/>
+          <p>Con un diseño moderno y sofisticado, el nuevo portátil HP Pavilion
+            15-cs0012ns ofrece el equilibrio perfecto entre rendimiento y estilo.
+            Elegante. Fino. Sorprendente. Diseñado para ofrecerte el máximo espacio
+            de pantalla, este modelo Hp Pavilion de 15" proporciona la mejor
+            visualización en un diseño más pequeño y elegante.</p>
+          <p>Realiza todas tus tareas diarias. Con hasta 10 horas y 15 minutos de
+            duración de la batería y una carga del 90% en 90 minutos, te ofrece
+            energía durante todo el día con carga de sobra. Realiza cualquier tarea
+            con suficiente energía restante para disfrutar de un tiempo libre bien
+            merecido.</p>
+          <video width="400" height="250" controls>
+            <source src="{% static producto_concreto.video%}" type="video/mp4">
+          </video>
+        {% elif producto_concreto.name == "lenovo" %}
+          <h2>Convertible Lenovo Yoga 910-13</h2>
+
+          <img alt="producto" src="{% static producto_concreto.imagen%}" width="370" height="430" class="derecha">
+          <b class="derecha">{{ producto_concreto.price }} euros</b>
+          <p>i7, 8 GB, 512 GB SSD</p><br/>
+          <p>Yoga 910 es un potente y elegante portátil que deja claro su estilo
+            para trabajar y jugar. Mientras que el diseño de una sola pieza de metal
+            y el bisel ultrafino atrapan la mirada, el rápido rendimiento,
+            la pantalla de alta definición y el sonido envolvente inspirarán su
+            imaginación.</p>
+          <p> Más que un portátil, el Yoga 910 conoce su estilo de vida.
+            Atraerá la atención allá donde vaya.</p>
+          <video width="400" height="250" controls>
+            <source src="{% static producto_concreto.video%}" type="video/mp4">
+          </video>
+        {% elif producto_concreto.name == "macbook" %}
+          <h2>Apple MacBook Pro MPXQ2Y/A</h2>
+          <img alt="producto" src="{% static producto_concreto.imagen%}" width="380" height="400" class="derecha">
+          <b class="derecha">{{ producto_concreto.price }} euros</b>
+          <p>13", i5, 8 GB, 128 GB SSD</p><br/>
+          <p>Es más rápido y potente que antes, pero más fino y ligero que nunca.
+            Tiene la pantalla con más color y brillo jamás vista en un portátil Mac.
+            El MacBook Pro es el resultado de nuestras ideas más innovadoras.
+            Y puede hacer realidad las tuyas.</p>
+          <video width="400" height="250" controls>
+            <source src="{% static producto_concreto.video%}" type="video/mp4">
+          </video>
+          <audio src="{% static producto_concreto.audio%}" controls autoplay loop></audio>
+        {% endif %}
+      {% else %}
+        <p>No se encontro el producto.</p>
+      {% endif %}
+    </div>
+{% endblock %}

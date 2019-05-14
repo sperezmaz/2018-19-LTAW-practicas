@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8"></meta>
+    {% load staticfiles %}
+    <title>Tienda_Tecnológica</title>
+    <link rel="stylesheet" href="{% static 'micss.css'%}">
+  </head>
+
+  <body>
+
+    <div class="header">
+      <header>
+        <h1>TIENDA DE PORTATILES</h1>
+      </header>
+    </div>
+
+    <ul class="tabla_navegacion">
+      <li><a href="/index">Portada</a></li>
+      <li><a href="/datos">Base de datos</a></li>
+      <li><form action="form.html">
+        <input type="submit" value="Formulario para comprar">
+      </form></li>
+    </ul>
+
+  <form action="{% url 'busqueda' %}" method="get" autocomplete= "off">
+    <input type="text"  list= "resultado" name="search" oninput ="main()" id="search">
+    <datalist id="resultado"></datalist>
+    <input type="submit" value="Buscar">
+  </form>
+
+    {% block content %}
+    <div>
+      <h2>PORTATILES</h2>
+      <ul class="contenido">
+        {% for producto in objects %}
+        <li><a href = "/{{ producto.name }}">
+            <div>
+              <img alt="producto" src="{% static producto.imagen%}" width="200" height="200">
+              <p>{{ producto.name }}</p>
+              <b>{{ producto.price }} euros</b>
+            </div>
+        </a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>
